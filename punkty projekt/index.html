@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        select {
+            height: 200%;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid text-center">
+        <div class="g-col-4">
+            <form id="dane">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Przeliczanie punktów ujemne</h5>
+                        <select class="form-select" id="a0" multiple aria-label="Multiple select example" onchange="wywolaj()">
+                        </select>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Przeliczanie punktów dodatnie</h5>
+                        <select class="form-select" id="a1" multiple aria-label="Multiple select example" onchange="wywolajSecond()">
+                        </select>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Wybrane dane</h5>
+                        <div id="wypluwacz"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="java.js"></script>
+</body>
+</html>
