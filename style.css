@@ -1,0 +1,62 @@
+header{
+    height: 200px;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    
+}
+header button{
+    background-color: #ff5f67;
+    font-family: Arial, sans-serif;
+    color: white;
+    float: right;
+
+}
+header button:hover{
+    background-color: #ff5f00;
+}
+main{
+    width: 100%;
+    background-color: white;
+}
+.cosik{
+    background-color: #ff5f67;
+    text-align: center;
+}
+p{
+    background-color: #ff5f67;
+    color: white;
+    font-size: 2em;
+    padding: 15px;
+}
+.zdjecia{
+    display: flex;
+    justify-content: center;
+}
+.lewo{
+    float: left;
+}
+.prawo{
+    float: right;
+}
+.opis{
+    display: flex;
+    justify-content: center;
+
+}
+.opinie{
+    height: 150px;
+    width: 250px;
+    background-color: #ededed;
+    border: solid 1px black;
+    padding: 5px;
+    margin: 10px;
+    overflow: scroll;
+}
+footer{
+    width: 100%;
+    background-color: #ff5f67;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
