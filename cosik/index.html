@@ -1,0 +1,94 @@
+﻿<html>
+<head>
+<meta charset="utf-8">
+<title>Konfigurator wyposażenia</title>
+<link rel="stylesheet" type="text/css" href="styl.css">
+
+<script type="text/javascript">
+function samochod()
+{
+if (document.formularz.kolory.value=="szary") document.getElementById("zdjecie").src="szary.png";
+ else if (document.formularz.kolory.value=="niebieski") document.getElementById("zdjecie").src="niebieski.png";
+ else if (document.formularz.kolory.value=="zielony") document.getElementById("zdjecie").src="zielony.png";
+ else if (document.formularz.kolory.value=="żółty") document.getElementById("zdjecie").src="zolty.png";
+  else document.getElementById("zdjecie").src="czerwony.png";
+
+  document.getElementById("wycena").innerHTML = "Cena bazowa: 75000 zł";
+  var cena = 75000;
+  
+  if (document.formularz.kolory.value != "szary") {document.getElementById("wycena").innerHTML += "<br> Lekier:  9000 zł";
+													cena += 9000;
+													};
+  if (document.formularz.felgi.value == "aluminiowe") {document.getElementById("wycena").innerHTML += "<br> Felgi aluminiowe:  7000 zł";
+													cena += 7000;
+													};
+  if (document.formularz.czujniki.checked == true) {document.getElementById("wycena").innerHTML += "<br> Czujniki parkowania:  6500 zł";
+													cena += 6500;
+												   };
+  if (document.formularz.klima.checked == true) {document.getElementById("wycena").innerHTML += "<br> Climatronic:  8500 zł";
+													cena += 8500;
+												   };
+  if (document.formularz.nawigacja.checked == true) {document.getElementById("wycena").innerHTML += "<br> Nawigacja:  5000 zł";
+													cena += 5000;
+												   };
+  var lan = "<hr> <h1>RAZEM: "+cena+ " zł</h1>";
+  document.getElementById("wycena").innerHTML += lan;
+}
+  </script>
+
+</head>
+
+<body>
+<section id="glowny">
+<section id="baner"> 
+<img id="baner" src="baner.jpg" alt="baner">
+</section>
+
+
+<section id="lewy">
+
+
+<form name="formularz"> 
+<hr>
+<h2>Kolor</h2>
+  <select id="kolory" name="kolory" onchange= "samochod()">
+    <option value="szary" selected>szary</option>
+    <option value="niebieski">niebieski</option>
+    <option value="czerwony">czerwony</option> 
+    <option value="żółty" >żółty</option> 
+	<option value="zielony">zielony</option >
+  </select> 
+</br>
+<hr> 
+<h2>Felgi</h2>
+<label for="stalowe">Stalowe</label>
+<input type="radio" name="felgi" id="stalowe" value="stalowe" checked onchange= "samochod()">
+<br>
+<label for="aluminiowe">Aluminiowe</label>
+<input type="radio" name="felgi" id="aluminiowe" value="aluminiowe" onchange= "samochod()">
+<hr>
+<h2>Doposażenie</h2>
+<label for="czujniki">Czujniki parkowania</label>
+<input type="checkbox" name="czujniki" id="czujniki" value="czujniki" onchange= "samochod()"><br>
+<label for="klima">Climatronic</label>
+<input type="checkbox" name="klima" id="klima" value="klima" onchange= "samochod()"><br>
+<label for="nawigacja">Nawigacja</label>
+<input type="checkbox" name="nawigacja" id="nawigacja" value="nawigacja" onchange= "samochod()"><br>
+<hr>
+</form>
+</section>
+
+<section id="prawy">
+<h1>Twój samochód</h1>
+<img src="szary.png" id="zdjecie" alt="foto">
+
+<br>
+<h1> Wycena </h1>
+<p id="wycena">Cena bazowa: 75000 zł </p>
+</section>
+
+<section id="stopka"><p>Autor strony: <i>00000000000</i></p></section>
+</section>
+</body>
+
+</html>
