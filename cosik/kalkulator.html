@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Mass Index - Kalkulator</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function obliczBMI() {
+            const waga = parseFloat(document.getElementById("waga").value);
+            const wzrost = parseFloat(document.getElementById("wzrost").value) / 100;
+            const bmi = (waga / (wzrost * wzrost)).toFixed(2);
+            
+            let kategoria = "";
+            if (bmi < 18.5) {
+                kategoria = "Niedowaga";
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+                kategoria = "Norma";
+            } else if (bmi >= 25 && bmi <= 29.9) {
+                kategoria = "Nadwaga";
+            } else if (bmi >= 30 && bmi <= 34.9) {
+                kategoria = "Otyłość 1st.";
+            } else if (bmi >= 35 && bmi <= 39.9) {
+                kategoria = "Otyłość 2st.";
+            } else {
+                kategoria = "Otyłość 3st.";
+            }
+
+            document.getElementById("wynik-bmi").textContent = "BMI: " + bmi;
+            document.getElementById("kategoria-bmi").textContent = "Kategoria: " + kategoria;
+        }
+    </script>
+</head>
+<body>
+    <div class="main-section">
+        <header>
+            <img src="baner.gif" alt="baner" class="banner">
+        </header>
+
+        <div class="left-panel">
+            <hr>
+            <h2><a href="index.html">BMI</a></h2>
+            <hr>
+            <h2><a href="kalkulator.html">Kalkulator</a></h2>
+            <hr>
+        </div>
+
+        <div class="right-panel">
+            <h1>Kalkulator BMI</h1>
+            <form action="javascript:void(0)" onsubmit="obliczBMI()">
+                <div>
+                    <label for="waga">Waga (kg):</label>
+                    <input type="text" id="waga" required>
+                </div>
+                <div>
+                    <label for="wzrost">Wzrost (cm):</label>
+                    <input type="text" id="wzrost" required>
+                </div>
+                <button type="submit">Oblicz BMI</button>
+            </form>
+
+            <p id="wynik-bmi"></p>
+            <p id="kategoria-bmi"></p>
+        </div>
+
+        <footer>
+            <p>Autor strony: <i>12345678901</i></p>
+        </footer>
+    </div>
+</body>
+</html>
